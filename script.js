@@ -12,8 +12,11 @@ class Arena {
 
 const max = new Gladiator("Maximus", "Trident");
 const troy = new Gladiator("Troy", "Spear");
-const hect = new Gladiator("Hector", "Club");
-console.log(hect.name)
+const hector = new Gladiator("Hector", "Club");
+console.log(hector.name)
 const captOne = new Arena("Capitol One Arena");
 console.log(captOne.name)
 
+const publication = "freeCodeCamp";
+publication[0].toUpperCase();
+console.log(publication)
