@@ -1,3 +1,4 @@
+
 class Gladiator {
     constructor(name, weapon){
         this.name = name
@@ -5,18 +6,30 @@ class Gladiator {
     }
 }
 class Arena {
-    constructor(name){
-        this.name = name 
+    constructor(name, gladiators){
+        this.name = name.charAt(0).toUpperCase() + name.slice(1)
+        this.gladiators = []
     }
+
+
+addGladiator(gladiator){
+if (this.gladiators.length < 2){
+this.gladiators.push(gladiator)
+}   
 }
+
+
+}
+
 
 const max = new Gladiator("Maximus", "Trident");
 const troy = new Gladiator("Troy", "Spear");
 const hector = new Gladiator("Hector", "Club");
-console.log(hector.name)
-const captOne = new Arena("Capitol One Arena");
-console.log(captOne.name)
 
-const publication = "freeCodeCamp";
-publication[0].toUpperCase();
-console.log(publication)
+const colosseum = new Arena("colosseum");
+console.log(colosseum.name)
+
+
+
+colosseum.addGladiator(max);
+console.log(colosseum.gladiators)
