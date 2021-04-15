@@ -13,12 +13,15 @@ class Arena {
 
 
 addGladiator(gladiator){
-if (this.gladiators.length < 2){
-this.gladiators.push(gladiator)
+    if(this.gladiators.length < 2) {
+        this.gladiators.push(gladiator)
+
+        function fight () {
+            console.log('Fight')
+        }
+fight()
 }   
 }
-
-
 }
 
 
@@ -30,6 +33,8 @@ const colosseum = new Arena("colosseum");
 console.log(colosseum.name)
 
 
-
 colosseum.addGladiator(max);
 console.log(colosseum.gladiators)
+colosseum.addGladiator(troy);
+console.log(colosseum.gladiators[0].name)
+console.log(colosseum.gladiators[1].name)
