@@ -5,10 +5,28 @@ h1 {
   text-align: center;
 }
 
-.main {
-  height: 500px;
-  width: 500px;
-  border: red solid 10px;
-  position: absolute;
-  margin: auto 0;
+#main {
+  border: #ff0000 solid 2px;
+  height: 100px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+button {
+  height: 50px;
+  width: 400px;
+  padding: 5px;
+  margin: 100px;
+}
+
+#main2 {
+  height: 100px;
+  width: 400px;
+  border: red 2px solid;
+}
+#main3 {
+  height: 100px;
+  width: 400px;
+  border: red 2px solid;
 }
