@@ -14,40 +14,56 @@ class Arena {
     } 
   
     addGladiator(gladiator){
+           //Pushes gladiators into array
             this.gladiators.push(gladiator)
-            var arenaFighters = this.gladiators.sort(function(){return 0.5 - Math.random()});
-                if(this.gladiators.length < 2) {
-                console.log( "There are two fighters in the arena!")
-            }
-        }
-        fight() {
-        console.log("There is a battle in the", this.name, "." , this.gladiators[0].name, " & " , this.gladiators[1].name , " are in the arena!" )
+            // Randomizes array
+            this.gladiators.sort(function(){return 0.5 - Math.random()});
 
-        if(this.gladiators[0].name == "Troy" && this.gladiators[1].name == "Maximus"){
-            console.log("Troy is fighter 1", "and Maximus is fighter 2! Maximus defeats Troy with his mighty Trident!")
-        } 
-        if(this.gladiators[0].name == "Hector" && this.gladiators[1].name == "Maximus"){
+            // If there are more than 2 gladiators in the array, this will remove the last one
+            if(this.gladiators.length > 2){
+                console.log(`${this.gladiators[0].name} and ${this.gladiators[1].name} have entered the ${this.name}!`)
+                return this.gladiators.pop()
+            }}
+        
+
+    fight() {
+          if(this.gladiators[0].name == "Troy" && this.gladiators[1].name == "Maximus" || this.gladiators[0].name == "Maximus" && this.gladiators[1].name == "Troy"){
+          console.log("Troy is fighter 1", "and Maximus is fighter 2! Maximus defeats Troy with his mighty Trident!")
+
+} 
+        if(this.gladiators[0].name === "Hector" && this.gladiators[1].name === "Maximus" || this.gladiators[0].name == "Maximus" && this.gladiators[1].name == "Hector"){
             console.log("Hector is fighter 1", "and Maximus is fighter 2! Hector mutilates Maximus with his mighty club!")
         }
-        if(this.gladiators[0].name == "Troy" && this.gladiators[1].name == "Hector"){
+        if(this.gladiators[0].name === "Troy" && this.gladiators[1].name === "Hector" || this.gladiators[0].name == "Hector" && this.gladiators[1].name == "Troy"){
             console.log("Troy is fighter 1", "and Hector is fighter 2! Troy defeats Hector with his super sharp spear!")
-    }   i
+        }}
+
+    entertained() {
+            if(this.gladiators[0].name === "Maximus" || this.gladiators[1].name === "Maximus"){
+            console.log(`Maximus is in the arena, The crowd is entertained!`)
         }
+    }
+
+    vote(){
+    
+    }
 }
 
 
 
-
-var max = new Gladiator("Maximus", "Trident");
-var troy = new Gladiator("Troy", "Spear");
-var hector = new Gladiator("Hector", "Club");
-var colosseum = new Arena("colosseum");
+let max = new Gladiator("Maximus", "Trident");
+let troy = new Gladiator("Troy", "Spear");
+let hector = new Gladiator("Hector", "Club");
+let colosseum = new Arena("colosseum");
 
 colosseum.addGladiator(max);
 colosseum.addGladiator(troy);
 colosseum.addGladiator(hector);
 
+console.log(colosseum.gladiators);
+
 colosseum.fight()
+colosseum.entertained()
 
 
 
